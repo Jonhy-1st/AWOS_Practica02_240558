@@ -9,4 +9,4 @@ En la siguiente práctica se realizarán peuqeños ejercicios de repaso para com
 
 
 <p align="justify">
-Esta Práctica será desarrollada con estructura de ramales, para el estudiante con la manipulación correcta de ramas en elcontexto de control de versiones y desarrollo colaboratuvo utilizando Git y Github
+Esta Práctica será desarrollada con estructura de ramales, para el estudiante con la manipulación correcta de ramas en elcontexto de control de versiones y desarrollo colaboratuvo utilizando Git y Github.git 

@@ -5,7 +5,11 @@
     multilinea
 */
 
+//Estilo 
+const bg = "linear-gradient(45deg, rgba(52, 152, 219, 1) 0%, rgba(26, 188, 156, 1) 50%)";
+const style_console = `background: ${bg}; color: white; border-radius: 6px; padding: 4px; font-size: 1.0rem; font-weight: bold;`;
 
+console.log("%cEjercicio 01: Declaracion de variables ",style_console);
 //Ejercicio 01: Declaracion de variables en JavaScript
 //1. Utilizando la palabra reservada VAR
 

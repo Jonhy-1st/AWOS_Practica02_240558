@@ -117,13 +117,59 @@ console.warn("5. Funciones Anónimas, sin parametros ");
 
 console.log ("Test 1 - Fecha de ultimo acceso es igual a la fecha de hoy");
 console.log(`Fecha del ultimo acceso es: ${lastLogin}`);
-console.log (`El usuario logeado es: ${isNewUser? "Nuevo usuario": "Usuario antiguo."}`);
+console.log (`El usuario logeado es: ${isNewUser()? "Nuevo usuario": "Usuario antiguo."}`);
 
 
 console.log("----------------------------------------------------");
 lastLogin= new Date ("2025/12/31");
 console.log("Test 2 - Fecha de acceso diferente a la fecha de hoy");
 console.log(`La fecha del ultimo acceso es: ${lastLogin}`);
-console.log (`El usuario logeado es: ${isNewUser? "Nuevo usuario": "Usuario antiguo."}`);
+console.log (`El usuario logeado es: ${isNewUser()? "Nuevo usuario": "Usuario antiguo."}`);
+
+//6. Funciones Anónimas con Parametros (Version Arrow o lambda)
+
+const sumar = (a,b) =>{
+    let resultado=a+b;
+    return resultado;
+}
+
+console.warn ("6. Funciones Anónima con párametros")
+console.log (`El resultado de la suma de 15 + 83 es: ${sumar(15,83)}`);
+
+/* Cuando la funcion anónima tiene solo una linea de operación se puede usar una versión 
+simplificada que no usa {}, ni la palabra reservada (return) */
+
+const multiplicar = (a,b) => a*b;
+console.log(`El resultado de la suma de 15 * 125 es: ${multiplicar(15,125)}`);
 
 
+// 7. Funciones Callback (Regreso de llamada)
+
+const recoveryPassword = function (email, callback) {
+
+    // Generamos el código a enviar al usuario
+    const recoveryCode = Math.floor(Math.random() * 90000) + 10000; 
+
+    console.log(`--------------------------------------------------
+        Correo del usuario solicitante: ${email}
+        Generando código de recuperación...
+        Código de recuperación generado: ${recoveryCode}
+        Enviando el correo al usuario...
+        Correo enviado a: ${email} con el código: ${recoveryCode}
+    --------------------------------------------------`);
+
+    // Definición de la respuesta del sistema
+    const response = {
+        status: "Ok",
+        message: "Código de restauración enviado satisfactoriamente"
+    };
+
+    // INVOCACIÓN DEL CALLBACK: Se hace dentro de la función principal
+    callback(response);
+};
+
+// Invocación de la función pasando el correo y la función anónima (callback)
+recoveryPassword("240558@utxicotepec.edu.mx", function (res) {
+    console.log("Respuesta recibida del sistema:", res.message);
+    console.log("Estado:", res.status);
+});
